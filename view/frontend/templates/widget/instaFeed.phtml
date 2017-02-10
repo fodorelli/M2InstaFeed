@@ -1,0 +1,66 @@
+<div id="instafeed<?php echo $block->getId() ?>" class="instafeed instablock<?php echo $block->getId() ?>"></div>
+<script type="text/javascript">
+    require(['instafeed'], function (Instafeed) {
+        var feed = new Instafeed({
+<!-- Main settings data -->
+<?php if($block->getClientId()): ?>
+clientId: '<?php echo $block->getClientId(); ?>',
+<?php endif; ?>
+<?php if($block->getaAuthToken()): ?>
+accessToken: '<?php echo $block->getaAuthToken(); ?>',
+<?php endif; ?>
+<!-- Get option data -->
+<?php if($block->getData('get') == "tagged"): ?>
+get: 'tagged',
+<?php if($block->getData('tag')): ?>
+tagName: '<?php echo $block->getData('tag'); ?>',
+<?php endif; ?>
+<?php elseif($block->getData('get') == "location"): ?>
+get: 'location',
+<?php if($block->getData('getlocationid')): ?>
+locationId: '<?php echo $block->getData('getlocationid'); ?>',
+<?php endif; ?>
+<?php elseif($block->getData('get') == "user"): ?>
+get: 'user',
+<?php if($block->getData('userid')): ?>
+userId: '<?php echo $block->getData('userid'); ?>',
+<?php endif; ?>
+<?php else: ?>
+get: 'popular',
+<?php endif; ?>
+<!-- Feed container -->
+target: 'instafeed<?php echo $block->getId() ?>',
+<?php if($block->getData('template')): ?>
+<!-- Template for items within instafeed -->
+template: '<?php echo $block->getData('template') ?>',
+<?php else: ?>
+<?php if($block->getData('links')): ?>
+template: '<a href="{{link}}"><img src="{{image}}" /></a>',
+<?php else: ?>
+template: '<img src="{{image}}" />',
+<?php endif; ?>
+<?php endif; ?>
+<!-- Sort output by -->
+<?php if($block->getData('sortby')): ?>
+sortBy: '<?php echo $block->getData('sortby'); ?>',
+<?php else: ?>
+sortBy: 'none',
+<?php endif; ?>
+<?php if($block->getData('links')): ?>
+links: <?php echo ($block->getData('links')) ? 'true' : 'false'; ?>,
+<?php endif; ?>
+<?php if($block->getData('limit')): ?>
+limit: '<?php $block->getData('limit'); ?>',
+<?php else: ?>
+limit: '8',
+<?php endif; ?>
+<?php if($block->getData('resolution')): ?>
+resolution: '<?php echo $block->getData('resolution'); ?>'
+<?php else: ?>
+resolution: '<?php echo $block->getData('resolution'); ?>'
+<?php endif; ?>
+        });
+        feed.run();
+    });
+</script>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="davagordon" sortOrder="999" translate="label">
+			<label>Dava Gordon</label>
+		</tab>
+		<section id="davagordon_instafeed" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Instafeed</label>
+			<tab>davagordon</tab>
+			<resource>Davagordon_Instafeed::config_davagordon_instafeed</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General Options</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="select">
+					<label>Enable Instafeed</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="client_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>Client ID</label>
+					<comment>You must have a valid instagram API client id which you can get at https://www.instagram.com/developer</comment>
+				</field>
+				<field id="client_redirect_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Client Redirect URL</label>
+					<comment>This must match what was initially provided during your app creation - https://www.instagram.com/developer</comment>
+				</field>
+				<field id="getauth_token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="text">
+					<label>oAuth Link</label>
+					<frontend_model>Davagordon\Instafeed\Block\Adminhtml\oAuthToken</frontend_model>
+				</field>
+				<field id="auth_token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label" type="text">
+					<label>oAuth Token</label>
+					<comment>To get your oAuth token click the fill out your Client ID and redirect URL and save upon doing this you will be provided with a link</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

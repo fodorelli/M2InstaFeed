@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add action="adminhtml/system_config/edit/section/davagordon_instafeed" id="Davagordon::davagordon_instafeed" module="Davagordon_Instafeed" parent="Davagordon::top_level" resource="Magento_Backend::content" sortOrder="10" title="Instafeed"/>
+	</menu>
+</config>

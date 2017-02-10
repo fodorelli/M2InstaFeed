@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Davagordon\Instafeed\Block\Widget\InstaFeed" id="davagordon_instafeed_instafeed">
+        <label>instaFeed Block</label>
+        <description>
+            <![CDATA[instaFeed block additional settings can be found <a href="http://instafeedjs.com/">here</a>]]></description>
+        <parameters>
+            <parameter name="get" sort_order="1" visible="true" xsi:type="select">
+                <label>Get</label>
+                <options>
+                    <option name="popular" value="popular" selected="true">
+                        <label translate="true">Popular Images</label>
+                    </option>
+                    <option name="tagged" value="tagged">
+                        <label translate="true">Tagged - Images with a specific tag. Use Tag Name</label>
+                    </option>
+                    <option name="location" value="location">
+                        <label translate="true">Location - Images with a location. Use Location ID</label>
+                    </option>
+                    <option name="user" value="user">
+                        <label translate="true">User - Images with a specific user. Use User ID</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="tag" sort_order="2" visible="true" xsi:type="text">
+                <label>Tag Name</label>
+            </parameter>
+            <parameter name="getlocationid" sort_order="3" visible="true" xsi:type="text">
+                <label>Location ID</label>
+            </parameter>
+            <parameter name="userid" sort_order="4" visible="true" xsi:type="text">
+                <label>User ID</label>
+            </parameter>
+            <parameter name="template" sort_order="5" visible="true" xsi:type="text">
+                <label>Template</label>
+                <description><![CDATA[<strong>Default Template:</strong><br /><pre style="background: #eff0f1; padding:15px; height: auto; display: block"><code>&lt;a href="{{link}}"&gt;&lt;img src="{{image}}" /&gt;&lt;/a&gt;</code></pre>
+                <br /><br /><ul style="list-style: none">
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>type<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              the image's type, can be <code class=" language-javascript">image</code> or <code class=" language-javascript">video</code>.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>width<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              the image's width, in pixels.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>height<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              the image's height, in pixels.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>orientation<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              the image's orientation, can be <code class=" language-javascript">square</code>, <code class=" language-javascript">portrait</code>, or <code class=" language-javascript">landscape</code>.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>link<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              URL to view the image on Instagram's website.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>image<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              URL of the image source. The size is inherited from the <b>resolution</b> option.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>caption<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Image's caption text. Defaults to empty string if there isn't one.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>likes<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Number of likes the image has.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>comments<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Number of comments the image has.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>location<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Name of the location associated with the image. Defaults to empty string.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>id<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Unique ID of the image. Useful if you want to use <a href="http://instagram.com/developer/iphone-hooks/">iPhone hooks</a> to open the images directly in the Instagram app.
+            </small>
+          </li>
+          <li>
+            <code class=" language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>model<span class="token punctuation">}</span><span class="token punctuation">}</span></code>
+            <small> -
+              Full JSON object of the image. If you want to get a property of the image that isn't listed above you access it using dot-notation. (ex: <code class=" language-markup">{{model.filter}}</code> would get the filter used)
+            </small>
+          </li>
+        </ul>]]></description>
+            </parameter>
+            <parameter name="sortby" sort_order="6" visible="true" xsi:type="select">
+                <label>Sort By</label>
+                <options>
+                    <option name="none" value="none" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="most-recent" value="most-recent">
+                        <label translate="true">Newest to Oldest</label>
+                    </option>
+                    <option name="least-recent" value="least-recent">
+                        <label translate="true">Oldest to Newest</label>
+                    </option>
+                    <option name="most-liked" value="most-liked">
+                        <label translate="true">Most Liked</label>
+                    </option>
+                    <option name="least-liked" value="least-liked">
+                        <label translate="true">Least Liked</label>
+                    </option>
+                    <option name="most-commented" value="most-commented">
+                        <label translate="true">Most Commented</label>
+                    </option>
+                    <option name="least-commented" value="least-commented">
+                        <label translate="true">Least Commented</label>
+                    </option>
+                    <option name="random" value="random">
+                        <label translate="true">Random</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="links" sort_order="7" visible="true" xsi:type="select">
+                <label>Link to Original Image</label>
+                <options>
+                    <option name="yes" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="limit" sort_order="8" visible="true" xsi:type="text">
+                <label>Maximum number of Images</label>
+                <description>Default is set to 8</description>
+                <value>8</value>
+            </parameter>
+            <parameter name="resolution" sort_order="9" visible="true" xsi:type="select">
+                <label>resolution</label>
+                <options>
+                    <option name="thumbnail" value="thumbnail" selected="true">
+                        <label translate="true">Thumbnail - 150x150</label>
+                    </option>
+                    <option name="low_resolution" value="low_resolution">
+                        <label translate="true">Low Resolution - 306x306</label>
+                    </option>
+                    <option name="standard_resolution" value="standard_resolution">
+                        <label translate="true">Standard Resolution - 612x612</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
