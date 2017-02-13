@@ -13,7 +13,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+            "davagordon/module-extensions": "remote-dev"
+        },
     "autoload": {
         "psr-4": {
             "Davagordon\\Instafeed\\": ""
@@ -22,6 +24,12 @@
             "registration.php"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/DavaGordon/M2Extensions.git"
+        },
+    ],    
     "scripts": {
         "post-install-cmd": [
             "cd web/",
