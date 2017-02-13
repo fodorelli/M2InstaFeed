@@ -34,6 +34,7 @@ After you have uploaded the files dont forget to run setup:upgrade in the comman
 
 <strong>Templating Shortcodes</strong><br />
 
+    ```
     {{type}} - the image's type, can be image or video.
     {{width}} - the image's width, in pixels.
     {{height}} - the image's height, in pixels.
@@ -45,6 +46,7 @@ After you have uploaded the files dont forget to run setup:upgrade in the comman
     {{comments}} - Number of comments the image has.
     {{location}} - Name of the location associated with the image. Defaults to empty string.
     {{id}} - Unique ID of the image. Useful if you want to use iPhone hooks to open the images directly in the Instagram app.
+    ```
     
-    <br />
+<strong>Support</strong><br />
     If for any reason you have an issue installing or implimenting please drop me a message and ill see what i can do for you
