@@ -3,15 +3,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main.content">
-            <block class="Davagordon\Instafeed\Block\Widget\InstaFeed" name="instafeed.hp">
+            <block class="Davagordon\Instafeed\Block\Widget\InstaFeed" name="instafeed.hp" after="ethos.block">
                 <arguments>
                     <!--<argument name="blocktitle" xsi:type="string">test</argument>-->
                     <argument name="get" xsi:type="string">tagged</argument>
                     <argument name="tagged" xsi:type="string">tagged</argument>
                     <argument name="links" xsi:type="string">true</argument>
                     <argument name="tag" xsi:type="string">TheCoco</argument>
-                    <argument name="user" xsi:type="string">thecoco.official</argument>
-                    <argument name="resolution" xsi:type="string">low_resolution</argument>
+                    <argument name="userid" xsi:type="string">thecoco.official</argument>
+                    <argument name="resolution" xsi:type="string">standard_resolution</argument>
                 </arguments>
             </block>
         </referenceContainer>
